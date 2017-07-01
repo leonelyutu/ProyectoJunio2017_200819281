@@ -1,0 +1,13 @@
+digraph g{
+Mord86[label = "Mord86"]
+Mord86->Asro25
+Mord86->Stin94
+Asro25[label = "Asro25"]
+Asro25->Imre78
+Imre78[label = "Imre78"]
+Imre78->Avey48
+Avey48[label = "Avey48"]
+Stin94[label = "Stin94"]
+Stin94->Taon95
+Taon95[label = "Taon95"]
+}

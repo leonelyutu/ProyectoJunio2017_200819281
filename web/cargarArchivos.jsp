@@ -12,17 +12,62 @@
         <title>Bienvenido a la carga de archivos</title>
     </head>
     <body>
-        <h1>Seleccione la Operacion</h1>
         
-         <h1>Cargar archivo de usuarios!</h1>
+        <div align="centar"> 
+        <h1 align = "center">Seleccione una Operacion</h1>
         
+         <h1 align="center">Cargar archivo de usuarios</h1>
+        </div>
+            
+    <center>
+        <div> 
+            <form method="post" enctype="multipart/form-data" action="archivos">
+         <input type="file" name="file" /><br /><br />
+         <input type="submit" name="uploadusuarios" value="Cargar Usuarios" />
+            </form>
+            
+                   <h1>Cargar Arvhivo de listaa de Juegos</h1>
+   <form method="post" enctype="multipart/form-data" action="cargaJuegos">
+         <input type="file" name="file" /><br /><br />
+         <input type="submit" name="uploadjuegos" value="Cargar Lista Juegos"/>
+    </form>
+           
+                    <h1>Cargar archivo de juego actual</h1>
+            
+   <form method="post" enctype="multipart/form-data" action="juegoActual">
+         <input type="file" name="file" /><br /><br />
+         <input type="submit" name="uploadjuegoactual" value="Juego Actual" />
+    </form>
+                   
+                   <h1>Cargar archivo de naves</h1>
+            <form method="post" enctype="multipart/form-data" action="cargaNaves">
+         <input type="file" name="file" /> <br /> <br />
+         <input  type="submit" name="cargaNaves" value="Cargar Naves" />
+            </form>
+   
+           
+   
+     
+            
+            <h1>Ver Reportes</h1>
+            <form method="post"  action="reportes">
+       
+       
+       <input type="submit" name="verreportes" value="Reportes" />
+    </form>
+            
+            
+   <form method="post"  action="controler">
+       
+       
+       <input type="submit" name="salir" value="Salir" />
+    </form>
+            
+            
+            
 
-   Seleccionar todo
-<form method="post" enctype="multipart/form-data" action="archivos">
-     <input type="file" name="file" /><br /><br />
-     <input type="submit" name="upload" />
-</form>
-
+        </div>
+    </center>
 
 
     </body>

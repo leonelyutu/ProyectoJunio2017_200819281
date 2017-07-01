@@ -13,10 +13,17 @@
 <title>Login</title>
 </head>
 <body>
+    
+    <center>
 <div align="center">
+    
+    
 <table>
 <tr>
+    
+<center>
 <td>Acceder al Sistema</td>
+</center> 
 <td></td>
 </tr>
 <tr>
@@ -34,6 +41,7 @@
 </tr>
 <tr>
 <td colspan="2" align="center"><input type="submit" name = "login" value="login"></td>
+<br>
 <td colspan="2" align="center"><input type="submit" name = "register" value="Registrar"></td>
 </tr>
 </table>
@@ -43,6 +51,12 @@
 </td>
 </tr>
 </table>
+    
+    
+    
 </div>
+    </center>
+    
+    
 </body>
 </html>

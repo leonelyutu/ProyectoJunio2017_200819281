@@ -59,14 +59,36 @@ backend usuarios = new backend();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
+        
+        
         if(request.getParameter("login") != null ){
                 
-            String nombre=request.getParameter("nombre");
-            String clave=request.getParameter("clave");
+            String nombre = request.getParameter("nombre");
+            String clave = request.getParameter("clave");
             
                 if(nombre.equals("admin") && clave.equals("admin")){
                  request.setAttribute("admin", "admin");
-                 request.getRequestDispatcher("cargarArchivos.jsp").forward(request, response);              
+                 request.getRequestDispatcher("cargarArchivos.jsp").forward(request, response);
+               
+                 
+                }else{
+                    //boolean existe = false;
+                    //usuarios.buscar(nombre,clave)
+                    boolean existe = usuarios.buscar_usuario_arbol(nombre, clave);
+                    log.info("desde controler"+existe);
+                    
+                    if(existe == true){
+                        
+                        request.setAttribute("Bienvenido", "admin");
+                        request.getRequestDispatcher("bienvenidoJugador.jsp").forward(request, response);
+               
+                 
+                    }else{
+                       request.getRequestDispatcher("index.jsp").forward(request, response);
+
+                    }
+                    
+                    /////###################cosulta de logeo //////#############
                 }
             }else if(request.getParameter("register") != null){
                 request.getRequestDispatcher("register.jsp").forward(request, response);
@@ -80,10 +102,11 @@ backend usuarios = new backend();
                         boolean sw= true;
                         
                         usuarios.arbol_insert(nombre, clave,"0");
+                        usuarios.graficar_dot();
                         String result = usuarios.imprimir_inordenABB();
                         log.info("recibido en llamada a imprimir"+result);
                         request.setAttribute("resultado", result);
-                        request.getRequestDispatcher("new.jsp").forward(request, response);
+                        request.getRequestDispatcher("bienvenidoNuevoUsuario.jsp").forward(request, response);
                        
                         
                     if(sw){
@@ -96,12 +119,20 @@ backend usuarios = new backend();
                     }
                 }else if(request.getParameter("regresar")!=null){
                     
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    request.getRequestDispatcher("cargarArchivos.jsp").forward(request, response);
 
-                }
+                }else if(request.getParameter("bienvenidoNuevoUsuario")!=null){
+                request.setAttribute("resultado", "bienvenido");
+                        request.getRequestDispatcher("index.jsp").forward(request, response);
+                       
+                }else if(request.getParameter("salir")!=null){
+                request.setAttribute("resultado", "bienvenido");
+                        request.getRequestDispatcher("index.jsp").forward(request, response);
             
-              
-       
+                }else if(request.getParameter("")!=null){
+                request.setAttribute("resultado", "bienvenido");
+                        request.getRequestDispatcher("verReportes.jsp").forward(request, response);
+                }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

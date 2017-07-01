@@ -17,6 +17,58 @@
         <servlet-name>archivos</servlet-name>
         <servlet-class>servlet.archivos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cargaJuegos</servlet-name>
+        <servlet-class>servlet.cargaJuegos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cargaNaves</servlet-name>
+        <servlet-class>servlet.cargaNaves</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>juegoActual</servlet-name>
+        <servlet-class>servlet.juegoActual</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>reportes</servlet-name>
+        <servlet-class>servlet.reportes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>bienvenidoJugador</servlet-name>
+        <servlet-class>servlet.bienvenidoJugador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearImagen</servlet-name>
+        <servlet-class>servlet.setearImagen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>pruebasImagenes</servlet-name>
+        <servlet-class>servlet.pruebasImagenes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearImagenMatrizSatelite1</servlet-name>
+        <servlet-class>servlet.setearImagenMatrizSatelite1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearIMA1</servlet-name>
+        <servlet-class>servlet.setearIMA1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearIMB1</servlet-name>
+        <servlet-class>servlet.setearIMB1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearIMS1</servlet-name>
+        <servlet-class>servlet.setearIMS1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearImagenMatrizSatelite2</servlet-name>
+        <servlet-class>servlet.setearImagenMatrizSatelite2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearMAJ2</servlet-name>
+        <servlet-class>servlet.setearMAJ2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -28,6 +80,58 @@
     <servlet-mapping>
         <servlet-name>archivos</servlet-name>
         <url-pattern>/archivos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cargaJuegos</servlet-name>
+        <url-pattern>/cargaJuegos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cargaNaves</servlet-name>
+        <url-pattern>/cargaNaves</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>juegoActual</servlet-name>
+        <url-pattern>/juegoActual</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>reportes</servlet-name>
+        <url-pattern>/reportes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>bienvenidoJugador</servlet-name>
+        <url-pattern>/bienvenidoJugador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearImagen</servlet-name>
+        <url-pattern>/setearImagen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pruebasImagenes</servlet-name>
+        <url-pattern>/pruebasImagenes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearImagenMatrizSatelite1</servlet-name>
+        <url-pattern>/setearImagenMatrizSatelite1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearIMA1</servlet-name>
+        <url-pattern>/setearIMA1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearIMB1</servlet-name>
+        <url-pattern>/setearIMB1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearIMS1</servlet-name>
+        <url-pattern>/setearIMS1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearImagenMatrizSatelite2</servlet-name>
+        <url-pattern>/setearImagenMatrizSatelite2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearMAJ2</servlet-name>
+        <url-pattern>/setearMAJ2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

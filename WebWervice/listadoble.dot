@@ -1,0 +1,7 @@
+digraph g{
+rankdir=LR
+<lista_juego.Nodo_juego instance at 0x1034460e0>[label = Erll88 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10384a758>[label = Geon75 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10384a950>[label = Taan31 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10384ab48>[label = Haan9 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x1034460e0>-><lista_juego.Nodo_juego instance at 0x10384a758><lista_juego.Nodo_juego instance at 0x10384a758>-><lista_juego.Nodo_juego instance at 0x10384a950><lista_juego.Nodo_juego instance at 0x10384a950>-><lista_juego.Nodo_juego instance at 0x10384ab48><lista_juego.Nodo_juego instance at 0x10384ab48>->None}

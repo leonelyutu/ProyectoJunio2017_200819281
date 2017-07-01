@@ -17,6 +17,10 @@
     </head>
     <body>
 
+        <tr>
+<td>${resultado}</td>
+<td></td>
+</tr>
         <h1><input type="text" value="${resultado}"></h1>
     
         <form action="controler" method="post">

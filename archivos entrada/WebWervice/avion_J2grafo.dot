@@ -1,0 +1,22 @@
+digraph g{
+rankdir=LR
+<matriz.Nodo instance at 0x1079aa758>[label =<Cab:0:0> shape =box, style=filled, fillcolor=red] 
+<matriz.Nodo instance at 0x1079bbdd0>[label =<col:18> shape =box, style=filled, fillcolor=red] 
+<matriz.Nodo instance at 0x1079c73f8>[label =<col:21> shape =box, style=filled, fillcolor=red] 
+<matriz.Nodo instance at 0x1079aa710>[label =<col:31> shape =box, style=filled, fillcolor=red] 
+<matriz.Nodo instance at 0x1079aa758>-><matriz.Nodo instance at 0x1079bbdd0><matriz.Nodo instance at 0x1079bbdd0>-><matriz.Nodo instance at 0x1079c73f8><matriz.Nodo instance at 0x1079c73f8>-><matriz.Nodo instance at 0x1079aa710><matriz.Nodo instance at 0x1079bb1b8>[label = <fil:8> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x1079c7368>[label = <fil:13> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x1079aa6c8>[label = <fil:31> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x1079aa758>-><matriz.Nodo instance at 0x1079bb1b8><matriz.Nodo instance at 0x1079bb1b8>-><matriz.Nodo instance at 0x1079c7368><matriz.Nodo instance at 0x1079c7368>-><matriz.Nodo instance at 0x1079aa6c8>subgraph{
+rank = same;<matriz.Nodo instance at 0x1079aa758>;<matriz.Nodo instance at 0x1079c7368><matriz.Nodo instance at 0x1079bb1b8>;<matriz.Nodo instance at 0x1079c7368><matriz.Nodo instance at 0x1079c7368>;<matriz.Nodo instance at 0x1079aa6c8>}
+<matriz.Nodo instance at 0x1079bb1b8>-><matriz.Nodo instance at 0x1079bbb48>
+<matriz.Nodo instance at 0x1079bbb48>[label = <Nodo:8:18> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x1079c7368>-><matriz.Nodo instance at 0x1079c7440>
+<matriz.Nodo instance at 0x1079c7440>[label = <Nodo:13:21> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x1079bbb48>-><matriz.Nodo instance at 0x1079bbc20>
+<matriz.Nodo instance at 0x1079c7440>-><matriz.Nodo instance at 0x1079c7320>
+<matriz.Nodo instance at 0x1079bbdd0>-><matriz.Nodo instance at 0x1079bbb48>
+<matriz.Nodo instance at 0x1079bbb48>-><matriz.Nodo instance at 0x1079bb7e8>
+<matriz.Nodo instance at 0x1079c73f8>-><matriz.Nodo instance at 0x1079c7440>
+<matriz.Nodo instance at 0x1079c7440>-><matriz.Nodo instance at 0x1079c73b0>
+}
