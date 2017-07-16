@@ -1,0 +1,18 @@
+jugador1,columna,fila,"nivel (1 satelite, 2 avion, 3 barco, 4 submarino)",modo,"direccion (1 = horizontal, 2 vertical) (cuando aplique)"
+Mord86,2,26,1,1,
+Mord86,3,3,2,1,
+Mord86,4,9,2,2,
+Mord86,5,26,3,1,1
+Mord86,1,17,3,2,2
+Mord86,6,29,3,3,1
+Mord86,9,21,4,1,2
+Mord86,10,11,4,2,2
+ Stin94,20,7,4,3,2
+ Stin94,17,21,2,2,
+ Stin94,10,12,1,1,
+ Stin94,15,8,3,3,2
+ Stin94,17,18,2,1,
+ Stin94,19,27,4,2,1
+ Stin94,22,26,4,1,2
+ Stin94,24,26,1,1,
+ Stin94,25,13,1,1,

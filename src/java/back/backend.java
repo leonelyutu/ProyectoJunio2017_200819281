@@ -39,11 +39,22 @@ public class backend {
 Logger log = Logger.getLogger(controler.class);
 FileItemFactory factory = new DiskFileItemFactory();
 ServletFileUpload upload = new ServletFileUpload(factory);
-    
+int contador_historial = 0;
     
 
     public backend() {
     }
+    
+    //#######################################################################################################
+    
+    public String Android(){
+    
+        String r = getString_Get("hola");
+        
+        return r;
+    }
+    
+    //#######################################################################################################
     
     public String arbol_insert(String nombre, String clave, String conectado) throws IOException{
     
@@ -379,9 +390,7 @@ ServletFileUpload upload = new ServletFileUpload(factory);
     
     public String insertar_naves(String jugador,String columna,String fila,String nivel,String mode,String direccion){
     
-        
-             RequestBody formBody = new FormEncodingBuilder()
-                      
+             RequestBody formBody = new FormEncodingBuilder()                  
             .add("jugador",jugador)
             .add("columna",columna)
             .add("fila",fila)
@@ -400,6 +409,7 @@ ServletFileUpload upload = new ServletFileUpload(factory);
     
     public String lectura_usuariocsv(HttpServletRequest request) throws IOException, FileUploadException, Exception{
     String r = "";       
+    
     List items = upload.parseRequest(request);
         for (Object item : items) {
             FileItem uploaded = (FileItem) item;
@@ -413,13 +423,18 @@ ServletFileUpload upload = new ServletFileUpload(factory);
 
             FileReader lector = new FileReader(fichero);
             BufferedReader buferlector = new BufferedReader(lector);
-            
+            lectura = buferlector.readLine();
             
             while ((lectura = buferlector.readLine()) != null){
                 //System.out.println(lectura);
                 String [] campos = lectura.split(",");
-                System.out.println(campos[0] + ";" + campos[1] + ";" + campos[2]);
-                arbol_insert(campos[0], campos[1], campos[2]);
+                //nombre,contrasena,conectado
+                String nombre = campos[0].trim();
+                String clave = campos[1].trim();
+                String conectado = campos[2].trim();
+                       
+                System.out.println(nombre + ";" + clave + ";" + conectado);
+                arbol_insert(nombre, clave, conectado);
                 
             }
       
@@ -486,7 +501,6 @@ ServletFileUpload upload = new ServletFileUpload(factory);
       return r;
     }
     
-    
     public String lectura_navescsv(HttpServletRequest request) throws IOException, FileUploadException, Exception{
     String r = "";       
     List items = upload.parseRequest(request);
@@ -509,17 +523,32 @@ ServletFileUpload upload = new ServletFileUpload(factory);
                 //System.out.println(lectura);
                 String [] campos = lectura.split(",");
                 //System.out.println(campos[0] + ";" + campos[1] + ";" + campos[2]);
-                String stringcampos=campos[0].trim();
+//               jugador1 columna	fila	nivel (1 satelite, 2 avion, 3 barco, 4 submarino)	modo	direccion (1 = horizontal, 2 vertical) (cuando aplique)
+//                Mord86	4	26	1	1	
+//                Mord86	5	3	2	1	
+//                Mord86	9	9	2	2	
+//                Mord86	10	26	3	1	1
 
+                String jugador =campos[0].trim();
+                String columna =campos[1].trim();
+                String fila =campos[2].trim();
+                String nivel =campos[3].trim();
+                String modo =campos[4].trim();
+                
+                
+                //el if es para manejar tamanos distintos de cadenas, de 5 y de 6 componentes
                 if(campos.length == 5){
+                    log.info(campos[0] + ";" + campos[1] + ";" + campos[2]+ ";"+ campos[3] + ";" + campos[4]);
                     
-               log.info(campos[0] + ";" + campos[1] + ";" + campos[2]+ ";"+ campos[3] + ";" + campos[4]);
-                    insertar_naves(stringcampos, campos[1], campos[2], campos[3], campos[4], "no tiene");
+                    insertar_naves(jugador, columna, fila, nivel, modo, "no tiene");
                 }
                 else{
-                //
-                insertar_naves(stringcampos, campos[1], campos[2], campos[3], campos[4], campos[5]);
-                log.info(campos[0] + ";" + campos[1] + ";" + campos[2]+ ";"+ campos[3] + ";" + campos[4]+ ";" + campos[5]);
+                    
+                    String direccion =campos[5].trim();
+                    
+                    log.info(campos[0] + ";" + campos[1] + ";" + campos[2]+ ";"+ campos[3] + ";" + campos[4]+ ";" + direccion);
+
+                    insertar_naves(jugador, columna, fila, nivel, modo, direccion);
                 }
             }
       
@@ -538,7 +567,6 @@ ServletFileUpload upload = new ServletFileUpload(factory);
     }
     
     
-     
     public String lectura_juegoscsv(HttpServletRequest request) throws IOException, FileUploadException, Exception{
     String r = "";       
     List items = upload.parseRequest(request);
@@ -562,8 +590,17 @@ ServletFileUpload upload = new ServletFileUpload(factory);
                 //System.out.println(lectura);
                 
                 String [] campos = lectura.split(",");
+                //UsuarioBase	Oponente	Tirosrealizados	Tirosacertados	Tirosfallados	Gano (1 si, 0 no)	Dañorecibido=tirosrecibidos
+                //Mord86	Stin94	51	26	25	0	10
                 
                 log.info(campos[0] + ";" + campos[1] + ";" + campos[2]+ ";"+ campos[3] + ";" + campos[4] + ";" + campos[5]+ ";" + campos[6]);
+                String UsuarioBase = campos[0].trim();
+                String Oponente = campos[1].trim();
+                String Tirosrealizados = campos[2].trim();
+                String Tirosacertados = campos[3].trim();
+                String Tirosfallados = campos[4].trim();
+                String gano = campos[5].trim();
+                String Danorecibido = campos[6].trim();
                 
                 //aqui se inserta en la lista, de cada nodo de arbol Jugador
                 //primero obtener el nodo, obtener la lista, llenar la lista
@@ -571,9 +608,8 @@ ServletFileUpload upload = new ServletFileUpload(factory);
                 //log.info(campos[0] + ";" + campos[1] + ";" + campos[2]);
                 //usuario_oponente,tiros_realizados,tiros_acertados,tiros_fallados,resultado,dano
 
-                buscar_arbol(campos[0],campos[1],campos[2],campos[3],campos[4],campos[5],campos[6]);
-                
-                        
+                buscar_arbol(UsuarioBase,Oponente,Tirosrealizados,Tirosacertados,Tirosfallados,gano,Danorecibido);
+                     
             }
       
             log.info("subido");
@@ -585,11 +621,373 @@ ServletFileUpload upload = new ServletFileUpload(factory);
             log.info("campos"+key + valor);
         }
     }
-            
-            
+              
       return r;
     }
     
+//################################# SEGUNDA FASE########################################################
+     public String arbol_avl_insertar(String nombre_padre, String nick, String password) throws IOException{
+    
+            RequestBody formBody = new FormEncodingBuilder()
+                      
+            .add("nodo_padre",nombre_padre)
+            .add("nick", nick)
+            .add("password",password)
+            .build();
+            String r = getString("insertar_contactos_AVL", formBody); 
+           System.out.println(r + "---");
+            
+            return r;
+    }
+    
+     public String arbol_B_insertar(String CoordenadaX,String CoordenadaY,String Tipo_tiro,String Resultado,String Tipo_de_nave_golpeada,String Emisor,String receptor,String Fecha,String tiempo_restante,String numero_tiro) throws IOException{
+    
+            RequestBody formBody = new FormEncodingBuilder()
+                      
+            .add("CoordenadaX",CoordenadaX)
+            .add("CoordenadaY", CoordenadaY)
+            .add("Tipo_tiro",Tipo_tiro)
+            .add("Resultado",Resultado)
+            .add("Tipo_de_nave_golpeada", Tipo_de_nave_golpeada)
+            .add("Emisor",Emisor)
+            .add("receptor",receptor)
+            .add("Fecha", Fecha)
+            .add("tiempo_restante",tiempo_restante)
+            .add("numero_tiro",numero_tiro)
+            .build();
+            
+            String r = getString("insertar_historial_B", formBody); 
+            System.out.println(r + "---");
+            
+            
+            return r;
+    }
+     
+     
+    public String arbol_avl_conslta(String nombre){
+    
+          RequestBody formBody = new FormEncodingBuilder()
+                      
+            .add("nombre",nombre)
+            
+            .build();
+            String result = getString("AVL_desplegar", formBody); 
+           System.out.println(result + "---");
+            
+        return result;
+    }
+     
+      public String arbol_avl_eliminar(String nombre_padre,String nombre_contacto){
+    
+          RequestBody formBody = new FormEncodingBuilder()
+            .add("nombre_padre",nombre_padre)
+            .add("nombre_contacto",nombre_contacto)
+            
+            .build();
+            String result = getString("AVL_eliminar", formBody); 
+           System.out.println(result + "---");
+            
+        return result;
+    }
+  
+    public String arbol_avl_modificar(String nombre_padre,String nombre_contacto,String nuevo_nombre,String nuevo_password ){
+    
+//         nombre_padre = str(request.form['nombre_padre'])##informacion dericiba desde Java
+//    nombre_contacto = str(request.form['nombre_contacto'])
+//    nuevo_nombre = str(request.form['nuevo_nombre'])
+//    nuevo_password = str(request.form['nuevo_password'])
+//        
+          RequestBody formBody = new FormEncodingBuilder()
+            .add("nombre_padre",nombre_padre)
+            .add("nombre_contacto",nombre_contacto)
+            .add("nuevo_nombre",nuevo_nombre)
+            .add("nuevo_password",nuevo_password)
+            
+                  
+            .build();
+            String result = getString("AVL_modificar", formBody); 
+           System.out.println(result + "---");
+            
+        return result;
+    }
+            
+    public String lectura_cotactos_csv(HttpServletRequest request) throws IOException, FileUploadException, Exception{
+    String r = "";       
+    List items = upload.parseRequest(request);
+        for (Object item : items) {
+            FileItem uploaded = (FileItem) item;
+            log.info(item);
+   
+            if (!uploaded.isFormField()) {
+      
+            File fichero = new File("/tmp", uploaded.getName());
+            String lectura = "";
+            uploaded.write(fichero);
+
+            FileReader lector = new FileReader(fichero);
+            BufferedReader buferlector = new BufferedReader(lector);
+            
+                lectura = buferlector.readLine();
+            //log.info(cadena);
+            
+            while ((lectura = buferlector.readLine()) != null){
+                //System.out.println(lectura);
+                
+                String [] campos = lectura.split(",");
+//                Usuario "padre"	Nickname	Contrasenaa
+//                Mord86	Stone Griffin	WAG95DOM2LZ
+
+                log.info(campos[0] + ";" + campos[1] + ";" + campos[2]);
+                String usuario_padre = campos[0].trim();
+                String nickname = campos[1].trim();
+                String password = campos[2].trim();
+               
+                arbol_avl_insertar(usuario_padre,nickname,password);
+                     
+            }
+      
+            log.info("subido");
+            uploaded.write(fichero);
+            } else {
+      
+            String key = uploaded.getFieldName();
+            String valor = uploaded.getString();
+            log.info("campos"+key + valor);
+        }
+    }
+              
+      return r;
+    }
+    
+//#######################################################################################################    
+
+//#########################################################################################################
+//##################################### Lectura del historial de juegos###################################
+  public String incrementar_juego(){
+    
+        String r = getString_Get("generar_juego");
+        log.info("Resultado en Incrementar Juego:"+r);
+        return r;
+        
+    }    
+    
+  public String graficar_historial(){
+  
+  String r = getString_Get("graficar_historial");
+        log.info("Graficando"+r);
+        return r;
+  }
+    
+ public String lectura_historial_csv(HttpServletRequest request) throws IOException, FileUploadException, Exception{
+    String r = "";       
+    contador_historial +=1;
+    incrementar_juego();
+    List items = upload.parseRequest(request);
+        for (Object item : items) {
+            FileItem uploaded = (FileItem) item;
+            log.info(item);
+   
+            if (!uploaded.isFormField()) {
+      
+            File fichero = new File("/tmp", uploaded.getName());
+            String lectura = "";
+            uploaded.write(fichero);
+
+            FileReader lector = new FileReader(fichero);
+            BufferedReader buferlector = new BufferedReader(lector);
+            
+                lectura = buferlector.readLine();
+            //log.info(cadena);
+            
+            while ((lectura = buferlector.readLine()) != null){
+                //System.out.println(lectura);
+                
+                String [] campos = lectura.split(",");
+////Coordenada X Coordenada Y Tipo tiro (1 = de uno en uno, 2 = ráfaga)	Resultado (fallo = 1, golpe = 2, eliminacion de objetivo = 3)	Tipo de nave golpeada (1 satelite, 2 avion, 3 barco, 4 submarino)	Emisor	Receptor	Fecha	Tiempo Restante	Número de Tiro
+////AC	12	1	1	1	Mord86	Stin94	8/1/15		1
+////W	26	1	3	3	Stin94	Mord96	8/1/15		2
+////B	30	1	1	4	Mord86	Stin94	8/1/15		3
+////E	12	11	3	2	Stin94	Mord96	8/1/15		4
+////Z	6	1	3	2	Mord86	Stin94	8/1/15		5
+////AB	7	1	2	3	Stin94	Mord96	8/1/15		6
+////J	10	1	1	3	Mord86	Stin94	8/1/15		7
+////T	8	1	2	3	Stin94	Mord96	8/1/15		8
+////F	6	1	3	1	Mord86	Stin94	8/1/15		9
+////AC	3	1	3	4	Stin94	Mord96	8/1/15		10  
+////
+                
+
+                log.info(campos[0] + ";" + campos[1] + ";" + campos[2]+";"+campos[3] + ";" + campos[4] + ";" + campos[5]+";"+campos[6] + ";" + campos[7] + ";" + campos[8]+";"+campos[9]);
+                String CoordenadaX = campos[0].trim();
+                String CoordenadaY = campos[1].trim();
+                String Tipo_tiro = campos[2].trim();
+                String Resultado = campos[3].trim();
+                String Tipo_de_nave_golpeada = campos[4].trim();
+                String Emisor = campos[5].trim();
+                String receptor = campos[6].trim();
+                String Fecha = campos[7].trim();
+                String tiempo_restante = campos[8].trim();
+                String numero_tiro = campos[9].trim(); 
+                
+                arbol_B_insertar(CoordenadaX,CoordenadaY,Tipo_tiro,Resultado,Tipo_de_nave_golpeada,Emisor,receptor,Fecha,tiempo_restante,numero_tiro);
+                //arbol_avl_insertar(usuario_padre,nickname,password);       
+            }
+      
+            log.info("subido");
+            uploaded.write(fichero);
+            } else {
+            String key = uploaded.getFieldName();
+            String valor = uploaded.getString();
+            log.info("campos"+key + valor);
+        }
+            
+            
+    }
+       //graficar_historial();       
+      return r;
+    }
+    
+//######################################################################################################## 
+ 
+//###########################################GENERAR HASH################################################    
+
+  public void crear_png_Hash() throws IOException{
+      String so = System.getProperty("os.name");
+      String comando = ("/usr/local/bin/dot -Tpng -O /Users/lio/NetBeansProjects/example1/web/hash.dot");
+      Process p = Runtime.getRuntime().exec(comando);
+            log.info(so);     
+    }
+   public String insertar_hash() throws IOException{
+  
+    String r = getString_Get("insertar_tabla_hash");
+        File archivohash = new File("/Users/lio/NetBeansProjects/example1/web/hash.dot");
+    FileWriter fw = new FileWriter(archivohash);
+    
+    fw.write(r);
+    fw.close();
+    
+    
+        crear_png_Hash();//llamada para generar imagen
+
+            System.out.println(r + "---");
+            log.info(r);   
+            return r;
+  }
+ 
+ //########################################################################################################    
+
+ //################################Obtener String y Graficar Arbol B#######################################
+ ////######################################################################################################
+   
+    public void crear_png_Arbol_B() throws IOException{
+      String so = System.getProperty("os.name");
+      String comando = ("/usr/local/bin/dot -Tpng -O /Users/lio/NetBeansProjects/example1/web/arbolBCliente.dot");
+      Process p = Runtime.getRuntime().exec(comando);
+            log.info(so);     
+    }
+    
+    
+    public String graficar_dot_Arbol_B() throws IOException{
+    
+    String r = getString_Get("arbolBGraficar"); 
+    
+    File archivoArbolB = new File("/Users/lio/NetBeansProjects/example1/web/arbolBCliente.dot");
+    FileWriter fw = new FileWriter(archivoArbolB);
+    
+    fw.write(r);
+    fw.close();
+    
+    
+        crear_png_Arbol_B();//llamada para generar imagen
+
+            System.out.println(r + "---");
+            log.info(r);   
+            return r;
+         
+ 
+            
+    }
+  
+ //################################Obtener String y Graficar Arbol B#######################################
+ ////######################################################################################################
+   
+   
+ //########################################## archivo tiros###############################################
+    //##########################################################################################
+    
+    
+ public String lectura_tiros_csv(HttpServletRequest request) throws IOException, FileUploadException, Exception{
+    String r = "";     
+    
+    List items = upload.parseRequest(request);
+        for (Object item : items) {
+            FileItem uploaded = (FileItem) item;
+            log.info(item);
+   
+            if (!uploaded.isFormField()) {
+      
+            File fichero = new File("/tmp", uploaded.getName());
+            String lectura = "";
+            uploaded.write(fichero);
+
+            FileReader lector = new FileReader(fichero);
+            BufferedReader buferlector = new BufferedReader(lector);
+            
+                lectura = buferlector.readLine();
+            //log.info(cadena);
+            
+            while ((lectura = buferlector.readLine()) != null){
+                //System.out.println(lectura);
+                
+                String [] campos = lectura.split(",");
+
+////                            jugador1	columna	fila
+////            Mord86	D	26
+////            Mord86	E	3
+////            Mord86	I	9
+////            Mord86	J	26
+////            Mord86	M	17
+////            Mord86	P	29
+////            Mord86	Q	21
+////             Stin94	J	17
+////             Stin94	L	7
+////             Stin94	N	21
+////             Stin94	K	19
+////             Stin94	I	19
+////             Stin94	S	3
+////             Stin94	H	16
+////             Stin94	H	20
+                
+                log.info(campos[0] + ";" + campos[1] + ";" + campos[2]);
+                String jugador = campos[0].trim();
+                String colmna = campos[1].trim();
+                String fila = campos[2].trim();
+                
+                //arbol_B_insertar(CoordenadaX,CoordenadaY,Tipo_tiro);
+                //arbol_avl_insertar(usuario_padre,nickname,password);       
+            }
+      
+            log.info("subido");
+            uploaded.write(fichero);
+            } else {
+            String key = uploaded.getFieldName();
+            String valor = uploaded.getString();
+            log.info("campos"+key + valor);
+        }
+            
+            
+    }
+       //graficar_historial();       
+      return r;
+    }
+    
+    
+    //#############################################################################################
+    //############################################################################################
+ 
+ 
+ 
+ 
     public static String getString(String metodo, RequestBody formBody) {
 
         try {
@@ -606,7 +1004,6 @@ ServletFileUpload upload = new ServletFileUpload(factory);
         return null;
     }
  
-    
   public static String getString_Get(String metodo) {
 
         try {

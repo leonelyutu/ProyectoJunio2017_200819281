@@ -41,9 +41,9 @@ ServletFileUpload upload = new ServletFileUpload(factory);
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            archivo.graficar_dot_satelite();
-      
-      
+        
+            archivo.graficar_dot_satelite();//Llamada a graficar satelite del jugador 1
+            
          byte [] resultado=null;  
               ServletContext sc = getServletContext();
                 

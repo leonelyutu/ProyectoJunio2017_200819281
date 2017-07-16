@@ -1,0 +1,17 @@
+digraph g{
+rankdir=LR
+<lista_doble_historial.Nodo_juego instance at 0x10a150488>[label = 1 shape =box, style=filled, fillcolor=blue] 
+subgraph 1{
+ node [shape=record];
+<lista_doble_historial.Nodo_juego instance at 0x10a150488>-><[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]><[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>[label="<P0>|Mord86|<P1>|Stin94|<P2>"];
+<[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>-><[<arbol_B_historial.Estadistica instance at 0x10a150bd8>, <arbol_B_historial.Estadistica instance at 0x10a134ea8>]>
+<[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>-><[<arbol_B_historial.Estadistica instance at 0x10a16ebd8>, <arbol_B_historial.Estadistica instance at 0x10a174680>]>
+<[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>-><[<arbol_B_historial.Estadistica instance at 0x10a19b200>, <arbol_B_historial.Estadistica instance at 0x10a19bf80>, <arbol_B_historial.Estadistica instance at 0x10a1a04d0>, <arbol_B_historial.Estadistica instance at 0x10a1a0a28>]>
+<[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>-><[<arbol_B_historial.Estadistica instance at 0x10a150bd8>, <arbol_B_historial.Estadistica instance at 0x10a134ea8>]>
+<[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>-><[<arbol_B_historial.Estadistica instance at 0x10a16ebd8>, <arbol_B_historial.Estadistica instance at 0x10a174680>]>
+<[<arbol_B_historial.Estadistica instance at 0x10a134098>, <arbol_B_historial.Estadistica instance at 0x10a17cb90>]>-><[<arbol_B_historial.Estadistica instance at 0x10a19b200>, <arbol_B_historial.Estadistica instance at 0x10a19bf80>, <arbol_B_historial.Estadistica instance at 0x10a1a04d0>, <arbol_B_historial.Estadistica instance at 0x10a1a0a28>]>
+<[<arbol_B_historial.Estadistica instance at 0x10a150bd8>, <arbol_B_historial.Estadistica instance at 0x10a134ea8>]>[label="<P0>|Mord86|<P1>|Stin94|<P2>"];
+<[<arbol_B_historial.Estadistica instance at 0x10a16ebd8>, <arbol_B_historial.Estadistica instance at 0x10a174680>]>[label="<P0>|Stin94|<P1>|Mord86|<P2>"];
+<[<arbol_B_historial.Estadistica instance at 0x10a19b200>, <arbol_B_historial.Estadistica instance at 0x10a19bf80>, <arbol_B_historial.Estadistica instance at 0x10a1a04d0>, <arbol_B_historial.Estadistica instance at 0x10a1a0a28>]>[label="<P0>|Mord86|<P1>|Stin94|<P2>|Mord86|<P3>|Stin94|<P4>"];
+None}
+None<lista_doble_historial.Nodo_juego instance at 0x10a150488>->None}

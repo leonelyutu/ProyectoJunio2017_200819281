@@ -1,13 +1,85 @@
 digraph g{
 Mord86[label = "Mord86"]
+subgraph Mord86{
+node [style = filled,color = blue];
+Mord86-><lista_juego.Nodo_juego instance at 0x10a16e5a8><lista_juego.Nodo_juego instance at 0x10a16e5a8>[label = Stin94 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a161a28>[label = Asro25 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a161560>[label = Idin94 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a150f38>[label = Jado86 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a16e5a8>-><lista_juego.Nodo_juego instance at 0x10a161a28><lista_juego.Nodo_juego instance at 0x10a161a28>-><lista_juego.Nodo_juego instance at 0x10a161560><lista_juego.Nodo_juego instance at 0x10a161560>-><lista_juego.Nodo_juego instance at 0x10a150f38>}
+subgraph Mord86{
+node [style = filled,color = red];
+Mord86-><arbol_AVL.Node instance at 0x10a186a28><arbol_AVL.Node instance at 0x10a186a28>[shape = record, label = "<f0> left|<f1>Imogene Mcclure|<f2> right "];
+<arbol_AVL.Node instance at 0x10a186a28>-><arbol_AVL.Node instance at 0x10a1921b8>
+<arbol_AVL.Node instance at 0x10a186a28>-><arbol_AVL.Node instance at 0x10a1504d0>
+<arbol_AVL.Node instance at 0x10a1921b8>[shape = record, label = "<f0> left|<f1>Ava Stanley|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1921b8>-><arbol_AVL.Node instance at 0x10a161a70>
+<arbol_AVL.Node instance at 0x10a1921b8>-><arbol_AVL.Node instance at 0x10a192758>
+<arbol_AVL.Node instance at 0x10a161a70>[shape = record, label = "<f0> left|<f1>Aspen Guerrero|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192758>[shape = record, label = "<f0> left|<f1>Idona Benjamin|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1504d0>[shape = record, label = "<f0> left|<f1>Stone Griffin|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1504d0>-><arbol_AVL.Node instance at 0x10a192488>
+<arbol_AVL.Node instance at 0x10a1504d0>-><arbol_AVL.Node instance at 0x10a1860e0>
+<arbol_AVL.Node instance at 0x10a192488>[shape = record, label = "<f0> left|<f1>Karen Gutierrez|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192488>-><arbol_AVL.Node instance at 0x10a192b90>
+<arbol_AVL.Node instance at 0x10a192488>-><arbol_AVL.Node instance at 0x10a192fc8>
+<arbol_AVL.Node instance at 0x10a192b90>[shape = record, label = "<f0> left|<f1>Jackson Acevedo|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192fc8>[shape = record, label = "<f0> left|<f1>Robert Bean|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1860e0>[shape = record, label = "<f0> left|<f1>Tana Swanson|<f2> right "];
+None}
 Mord86->Asro25
 Mord86->Stin94
 Asro25[label = "Asro25"]
+subgraph Asro25{
+node [style = filled,color = red];
+Asro25-><arbol_AVL.Node instance at 0x10a192050><arbol_AVL.Node instance at 0x10a192050>[shape = record, label = "<f0> left|<f1>Kitra Roy|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192050>-><arbol_AVL.Node instance at 0x10a186908>
+<arbol_AVL.Node instance at 0x10a192050>-><arbol_AVL.Node instance at 0x10a1866c8>
+<arbol_AVL.Node instance at 0x10a186908>[shape = record, label = "<f0> left|<f1>Ivory Thornton|<f2> right "];
+<arbol_AVL.Node instance at 0x10a186908>-><arbol_AVL.Node instance at 0x10a1619e0>
+<arbol_AVL.Node instance at 0x10a1619e0>[shape = record, label = "<f0> left|<f1>Brooke Hendricks|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1866c8>[shape = record, label = "<f0> left|<f1>Tobias Smith|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1866c8>-><arbol_AVL.Node instance at 0x10a161680>
+<arbol_AVL.Node instance at 0x10a161680>[shape = record, label = "<f0> left|<f1>Vivian Walter|<f2> right "];
+None}
 Asro25->Imre78
 Imre78[label = "Imre78"]
+subgraph Imre78{
+node [style = filled,color = blue];
+Imre78-><lista_juego.Nodo_juego instance at 0x10a16ea70><lista_juego.Nodo_juego instance at 0x10a16ea70>[label = Erll88 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a16ef38>[label = Geon75 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a174518>[label = Taan31 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a174ab8>[label = Haan9 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a16ea70>-><lista_juego.Nodo_juego instance at 0x10a16ef38><lista_juego.Nodo_juego instance at 0x10a16ef38>-><lista_juego.Nodo_juego instance at 0x10a174518><lista_juego.Nodo_juego instance at 0x10a174518>-><lista_juego.Nodo_juego instance at 0x10a174ab8>}
 Imre78->Avey48
 Avey48[label = "Avey48"]
 Stin94[label = "Stin94"]
+subgraph Stin94{
+node [style = filled,color = blue];
+Stin94-><lista_juego.Nodo_juego instance at 0x10a150680><lista_juego.Nodo_juego instance at 0x10a150680>[label = Mord86 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a150050>[label = Asro25 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a133878>[label = Imre78 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a134e60>[label = Idin94 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a1347a0>[label = Jado86 shape =box, style=filled, fillcolor=blue] 
+<lista_juego.Nodo_juego instance at 0x10a150680>-><lista_juego.Nodo_juego instance at 0x10a150050><lista_juego.Nodo_juego instance at 0x10a150050>-><lista_juego.Nodo_juego instance at 0x10a133878><lista_juego.Nodo_juego instance at 0x10a133878>-><lista_juego.Nodo_juego instance at 0x10a134e60><lista_juego.Nodo_juego instance at 0x10a134e60>-><lista_juego.Nodo_juego instance at 0x10a1347a0>}
+subgraph Stin94{
+node [style = filled,color = red];
+Stin94-><arbol_AVL.Node instance at 0x10a19b878><arbol_AVL.Node instance at 0x10a19b878>[shape = record, label = "<f0> left|<f1>Gay Ferrell|<f2> right "];
+<arbol_AVL.Node instance at 0x10a19b878>-><arbol_AVL.Node instance at 0x10a192f38>
+<arbol_AVL.Node instance at 0x10a19b878>-><arbol_AVL.Node instance at 0x10a192680>
+<arbol_AVL.Node instance at 0x10a192f38>[shape = record, label = "<f0> left|<f1>Deborah Thomas|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192f38>-><arbol_AVL.Node instance at 0x10a192f80>
+<arbol_AVL.Node instance at 0x10a192f80>[shape = record, label = "<f0> left|<f1>Aidan Padilla|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192680>[shape = record, label = "<f0> left|<f1>Sage Mendoza|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192680>-><arbol_AVL.Node instance at 0x10a192170>
+<arbol_AVL.Node instance at 0x10a192680>-><arbol_AVL.Node instance at 0x10a19b440>
+<arbol_AVL.Node instance at 0x10a192170>[shape = record, label = "<f0> left|<f1>Pandora Fisher|<f2> right "];
+<arbol_AVL.Node instance at 0x10a192170>-><arbol_AVL.Node instance at 0x10a1927a0>
+<arbol_AVL.Node instance at 0x10a192170>-><arbol_AVL.Node instance at 0x10a1923f8>
+<arbol_AVL.Node instance at 0x10a1927a0>[shape = record, label = "<f0> left|<f1>Otto Vaughan|<f2> right "];
+<arbol_AVL.Node instance at 0x10a1923f8>[shape = record, label = "<f0> left|<f1>Ronan Holman|<f2> right "];
+<arbol_AVL.Node instance at 0x10a19b440>[shape = record, label = "<f0> left|<f1>Ulla Patrick|<f2> right "];
+None}
 Stin94->Taon95
 Taon95[label = "Taon95"]
 }

@@ -1,0 +1,11 @@
+Coordenada X,Coordenada Y,"Tipo tiro (1 = de uno en uno, 2 = ráfaga)","Resultado (fallo = 1, golpe = 2, eliminacion de objetivo = 3)","Tipo de nave golpeada (1 satelite, 2 avion, 3 barco, 4 submarino)",Emisor,Receptor,Fecha,Tiempo Restante,Número de Tiro
+L,7,1,2,4,Mord86,Stin94,8/1/2015,,1
+AD,25,1,2,4,Stin94,Mord96,8/1/2015,,2
+R,7,1,2,1,Mord86,Stin94,8/1/2015,,3
+L,21,1,2,4,Stin94,Mord96,8/1/2015,,4
+AC,25,1,3,3,Mord86,Stin94,8/1/2015,,5
+Q,4,1,2,1,Stin94,Mord96,8/1/2015,,6
+AA,18,1,1,2,Mord86,Stin94,8/1/2015,,7
+E,10,1,1,4,Stin94,Mord96,8/1/2015,,8
+M,15,1,1,3,Mord86,Stin94,8/1/2015,,9
+F,30,1,1,2,Stin94,Mord96,8/1/2015,,10

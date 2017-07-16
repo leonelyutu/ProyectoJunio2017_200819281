@@ -69,6 +69,42 @@
         <servlet-name>setearMAJ2</servlet-name>
         <servlet-class>servlet.setearMAJ2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>setearMBJ2</servlet-name>
+        <servlet-class>servlet.setearMBJ2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearMSJ2</servlet-name>
+        <servlet-class>servlet.setearMSJ2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cargar_archivo_contactos</servlet-name>
+        <servlet-class>servlet.cargar_archivo_contactos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>android01</servlet-name>
+        <servlet-class>servlet.android01</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cargaHistorialdeJuegos</servlet-name>
+        <servlet-class>servlet.cargaHistorialdeJuegos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearImagenHash</servlet-name>
+        <servlet-class>servlet.setearImagenHash</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>setearImagenAB</servlet-name>
+        <servlet-class>servlet.setearImagenAB</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adminAVL</servlet-name>
+        <servlet-class>servlet.adminAVL</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>carga_tiros</servlet-name>
+        <servlet-class>servlet.carga_tiros</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -132,6 +168,42 @@
     <servlet-mapping>
         <servlet-name>setearMAJ2</servlet-name>
         <url-pattern>/setearMAJ2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearMBJ2</servlet-name>
+        <url-pattern>/setearMBJ2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearMSJ2</servlet-name>
+        <url-pattern>/setearMSJ2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cargar_archivo_contactos</servlet-name>
+        <url-pattern>/cargar_archivo_contactos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>android01</servlet-name>
+        <url-pattern>/android01</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cargaHistorialdeJuegos</servlet-name>
+        <url-pattern>/cargaHistorialdeJuegos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearImagenHash</servlet-name>
+        <url-pattern>/setearImagenHash</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>setearImagenAB</servlet-name>
+        <url-pattern>/setearImagenAB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminAVL</servlet-name>
+        <url-pattern>/adminAVL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>carga_tiros</servlet-name>
+        <url-pattern>/carga_tiros</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

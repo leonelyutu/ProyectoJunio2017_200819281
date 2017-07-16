@@ -47,11 +47,11 @@ ServletFileUpload upload = new ServletFileUpload(factory);
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        archivo.graficar_dot_barcoJ2();
-         archivo.graficar_dotsubmarinoJ1();
-           archivo.graficar_dot_avionJ1();
-            archivo.graficar_dot_satelite();
-            archivo.graficar_dot();
+        //archivo.graficar_dot_barcoJ2();
+         //archivo.graficar_dotsubmarinoJ1();
+           //archivo.graficar_dot_avionJ1();
+            //archivo.graficar_dot_satelite();
+            archivo.graficar_dot();//generar grafica del arbol
         byte [] resultado=null;  
               ServletContext sc = getServletContext();
                 

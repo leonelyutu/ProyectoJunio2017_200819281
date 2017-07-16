@@ -1,15 +1,12 @@
 digraph g{
 rankdir=LR
-<matriz.Nodo instance at 0x1038573f8>[label =<Cab:0:0> shape =box, style=filled, fillcolor=red] 
-<matriz.Nodo instance at 0x103857d88>[label =<col:26> shape =box, style=filled, fillcolor=red] 
-<matriz.Nodo instance at 0x1038573b0>[label =<col:31> shape =box, style=filled, fillcolor=red] 
-<matriz.Nodo instance at 0x1038573f8>-><matriz.Nodo instance at 0x103857d88><matriz.Nodo instance at 0x103857d88>-><matriz.Nodo instance at 0x1038573b0><matriz.Nodo instance at 0x103857cb0>[label = <fil:20> shape =box, style=filled, fillcolor=blue] 
-<matriz.Nodo instance at 0x103857368>[label = <fil:31> shape =box, style=filled, fillcolor=blue] 
-<matriz.Nodo instance at 0x1038573f8>-><matriz.Nodo instance at 0x103857cb0><matriz.Nodo instance at 0x103857cb0>-><matriz.Nodo instance at 0x103857368>subgraph{
-rank = same;<matriz.Nodo instance at 0x1038573f8>;<matriz.Nodo instance at 0x103857368><matriz.Nodo instance at 0x103857cb0>;<matriz.Nodo instance at 0x103857368>}
-<matriz.Nodo instance at 0x103857cb0>-><matriz.Nodo instance at 0x103857dd0>
-<matriz.Nodo instance at 0x103857dd0>[label = <Nodo:20:26> shape =box, style=filled, fillcolor=blue] 
-<matriz.Nodo instance at 0x103857dd0>-><matriz.Nodo instance at 0x103857c68>
-<matriz.Nodo instance at 0x103857d88>-><matriz.Nodo instance at 0x103857dd0>
-<matriz.Nodo instance at 0x103857dd0>-><matriz.Nodo instance at 0x103857d40>
+<matriz.Nodo instance at 0x10a17c5a8>[label =<Cab:0:0> shape =box, style=filled, fillcolor=red] 
+<matriz.Nodo instance at 0x10a180170>[label =<col:26> shape =box, style=filled, fillcolor=red] 
+<matriz.Nodo instance at 0x10a17c5a8>-><matriz.Nodo instance at 0x10a180170>
+<matriz.Nodo instance at 0x10a1800e0>[label = <fil:2> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x10a17c5a8>-><matriz.Nodo instance at 0x10a1800e0>subgraph{
+rank = same;<matriz.Nodo instance at 0x10a17c5a8>;<matriz.Nodo instance at 0x10a17c518>}
+<matriz.Nodo instance at 0x10a1800e0>-><matriz.Nodo instance at 0x10a1801b8>
+<matriz.Nodo instance at 0x10a1801b8>[label = <Nodo:2:26> shape =box, style=filled, fillcolor=blue] 
+<matriz.Nodo instance at 0x10a180170>-><matriz.Nodo instance at 0x10a1801b8>
 }

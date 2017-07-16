@@ -40,9 +40,9 @@ ServletFileUpload upload = new ServletFileUpload(factory);
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            //archivo.graficar_dot_satelite2();
-      
-      
+         
+        archivo.graficar_dot_satelite2();
+        
          byte [] resultado=null;  
               ServletContext sc = getServletContext();
                 

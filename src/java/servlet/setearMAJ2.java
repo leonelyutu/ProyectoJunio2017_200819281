@@ -42,14 +42,11 @@ ServletFileUpload upload = new ServletFileUpload(factory);
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        archivo.graficar_dot_barcoJ2();
-      
-      
+        archivo.graficar_dot_avionJ2();
+     
          byte [] resultado=null;  
               ServletContext sc = getServletContext();
-                
-              //String filename = sc.getRealPath(File.separator+ File.separator + "arbolCliente.dot.png");
-             
+               
               String filename = sc.getRealPath("avionjugador2.dot.png");
                File f=new File(filename);
                int size=(int) f.length();
